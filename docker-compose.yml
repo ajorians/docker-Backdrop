@@ -1,0 +1,7 @@
+services:
+  backdrop:
+    image: ghcr.io/ajorians/backdrop:latest
+    container_name: backdrop
+    ports:
+      - 7071:80 # <Host Port>:<Container Port>
+    restart: unless-stopped
