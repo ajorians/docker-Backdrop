@@ -1,7 +1,10 @@
 services:
   backdrop:
-    image: ghcr.io/ajorians/backdrop:latest
+    image: backdrop:latest
     container_name: backdrop
     ports:
-      - 7071:80 # <Host Port>:<Container Port>
-    restart: unless-stopped
+      - 8088:80
+    environment:
+      BACKDROP_DB_HOST: database.mydomain.com
+      BACKDROP_DB_USER: backdropuser
+      BACKDROP_DB_PASSWORD: changeme
